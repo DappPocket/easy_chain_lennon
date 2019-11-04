@@ -1,0 +1,2 @@
+drop_index("transactions", "hash")
+drop_table("transactions")

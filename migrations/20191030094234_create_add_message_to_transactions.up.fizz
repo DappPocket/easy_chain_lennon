@@ -1,0 +1,1 @@
+add_column("transactions", "message", "string", {default: ""})

@@ -1,0 +1,24 @@
+<div class="columns">
+  <div class="column is-full">
+    <%= for (k, messages) in flash { %>
+      <%= for (msg) in messages { %>
+        <% if (k == "success") {%>
+          <% let mtype = "is-success" %>
+        <% } else if (k == "error") {%>
+          <% let mtype = "is-danger" %>
+        <% } else {%>
+          <% let mtype = "is-info" %>
+        <% } %>
+        <article class="message <%= mtype %>" role="alert">
+          <div class="message-header">
+            <p></p>
+            <button class="delete" aria-label="delete"></button>
+          </div>
+          <div class="message-body">
+            <%= msg %>
+          </div>
+        </article>
+      <% } %>
+    <% } %>
+  </div>
+</div>

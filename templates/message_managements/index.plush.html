@@ -1,0 +1,67 @@
+<div class="columns">
+  <div class="column">
+    <%= form({action: messageManagementsListPath({}), method: "GET"}) { %>
+      Tx Hash 搜尋: <input name="query_hash" type="text" value="<%= query_hash %>"></input>
+      <button>查詢</button>
+      <%= if (query_hash != "") { %>
+        <a href="/message_managements/list"><i class="material-icons has-text-danger">remove_circle</i></a>
+      <% } %>
+    <% } %>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-12">
+    <table class="table is-narrow is-fullwidth">
+      <thead>
+        <tr>
+          <th>訊息</th>
+          <th>from</th>
+          <th>遮蔽留言</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for (tx) in transactions { %>
+          <tr>
+            <td>
+              <%= tx.InputString() %>
+            </td>
+            <td>
+              <%= tx.FormAddr %>
+            </td>
+            <td>
+              <%= if (!tx.Hide) { %>
+                <i class="material-icons has-text-info">remove_red_eye</i>
+              <% } else { %>
+                <i class="material-icons has-text-danger">not_interested</i>
+              <% } %>
+            </td>
+            <td>
+              <div class="buttons">
+                <%= if (!tx.Hide) { %>
+                  <a class="button is-danger" href="/message_managements/change_hidding/<%= tx.ID %>" onclick="return confirm('請確定操作')">
+                    遮蔽
+                  </a>
+                <% } else {%>
+                  <a class="button is-warning" href="/message_managements/change_hidding/<%= tx.ID %>" onclick="return confirm('請確定操作')">
+                    解除
+                  </a>
+                <% } %>
+                <a class="button is-info" href="<%= etherhost %>/tx/<%= tx.Hash %>" target="_blank">
+                  ethscan
+                </a>
+              </div>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-4">
+    <div class="text-center">
+      <%= paginator(pagination) %>
+    </div>
+  </div>
+</div>

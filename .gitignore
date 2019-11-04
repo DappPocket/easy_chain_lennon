@@ -1,0 +1,8 @@
+node_modules
+vendor
+public/assets/*.css
+public/assets/*.eot
+public/assets/*.js
+public/js/
+public/css/
+dist
