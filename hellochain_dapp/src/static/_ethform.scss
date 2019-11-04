@@ -1,0 +1,29 @@
+.container.eth_form_container {
+  background-color: #062737;
+  height: 100%;
+  background: url("/eth_form_bg.jpeg");
+  background-size: cover;
+  position: relative;
+  .v-card-help {
+    position: relative;
+    @media (min-width: 1281px) {
+      top: 50%;
+    }
+    .v-card {
+      -webkit-box-shadow: 13px 14px 18px -5px rgba(0,0,0,1);
+      -moz-box-shadow: 13px 14px 18px -5px rgba(0,0,0,1);
+      box-shadow: 13px 14px 18px -5px rgba(0,0,0,1);
+    }
+    .v-list-item__title {
+      span {
+        position: relative;
+        bottom: 4px;
+        padding-right: 3px;
+        text-decoration: underline;
+      }
+      img {
+        width: 1rem;
+      }
+    }
+  }
+}

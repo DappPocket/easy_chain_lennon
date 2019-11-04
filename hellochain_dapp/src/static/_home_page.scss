@@ -1,0 +1,33 @@
+.v-dialog {
+  width: 50% !important;
+  @media (max-width: 1000px) {
+    width: 70% !important;
+  }
+  @media (max-width: 780px) {
+    width: 90% !important;
+  }
+  .v-card {
+    .v-card__title{
+      text-align: center;
+    }
+    .v-card__text {
+      .v-card-text_subject {
+        font-weight: bold;
+        text-decoration: underline;
+        color: black;
+      }
+      .notice-head {
+        color: red;
+        i {
+          color: red;
+        }
+      }
+    }
+    i.mdi-ethereum {
+      color: #222cac;
+    }
+    .v-btn.text--notice-ok {
+      margin: auto !important;
+    }
+  }
+}

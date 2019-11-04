@@ -1,0 +1,8 @@
+v-dialog(v-model='dialog' persistent='' max-width='290')
+  v-card
+    v-card-title.headline 請開啟 MataMask
+    v-card-text
+      | MataMask 偵測未開啟. 請先開啟MataMask
+    v-card-actions
+      v-spacer
+      v-btn(color='green darken-1' text='' @click='dialog = false') OK
